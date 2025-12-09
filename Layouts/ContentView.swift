@@ -11,15 +11,17 @@ struct ContentView: View {
     @State private var messageString = "When the Genius Bar Needs Help, They Call You!"
     
     var body: some View {
-            
+        //GeometryReader{ geometry in
             VStack {
-                Text("You Have Skills")
+                Text("Awesome!")
                     .font(.largeTitle)
                     .fontWeight(.black)
-                    .foregroundStyle(.goldBC)
+                    .foregroundStyle(.white)
                     .padding()
-                    .background(.maroonBC)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .frame(maxWidth: .infinity)
+                    .background(.indigo)
+                
+                
                 
                 Spacer()
                 Text(messageString)
@@ -35,6 +37,16 @@ struct ContentView: View {
                 
                 Spacer()
                 
+//                Divider()
+//                    .background(.black)
+//                    .padding()
+//                    .frame(width: 150.0)
+                
+//                Rectangle()
+//                    .fill(.indigo)
+                   // .frame(width: geometry.size.width * 2/3, height: 1)
+                   // .frame(width: 175, height: 1)
+                    
                 HStack{
                     Button("Awesome"){
                         messageString = "You Are Awesome!"
@@ -49,12 +61,14 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
                 //.border(.purple, width: 5)
                 .padding()
+                
+                Rectangle()
+                    .frame(height: 0)
+                    .background(.indigo)
             }
-            .background(
-                Gradient(colors: [.skyBlue,.indigo])
-            )
-    
-       // .padding()
+       // } //GeometryReader
+        
+           
     }
 }
 
